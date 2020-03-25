@@ -1,21 +1,15 @@
 const express = require('express');
-const crtypto = require('crypto');
+
+const OngController = require('./controllers/OngController')
+const IncidentController = require('./controllers/IncidentController')
 
 const routes = express.Router();
 
-routes.post('/ongs', (resq, resp) => {
+routes.get('/ongs', OngController.index)
+routes.post('/ongs', OngController.create);
 
-    const { name,
-            email,
-            whatsapp,
-            city,
-            state} = resq.body;
-
-    const id = crypto.randomBytes(4).toString('HEX')
-
-    
-
-    return resp.json();
-});
+routes.get('/incidents', IncidentController.index);
+routes.post('/incidents', IncidentController.create);
+routes.delete('/incidents/:id', IncidentController.delete);
 
 module.exports = routes;

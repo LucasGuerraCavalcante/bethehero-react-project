@@ -48,6 +48,4 @@ module.exports = {
         return resp.status(204).send();
     },
 
-    // 1:17:20
-
 };

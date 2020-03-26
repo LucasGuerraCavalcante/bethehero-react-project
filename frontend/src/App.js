@@ -1,9 +1,17 @@
 import React from 'react';
 
+import './global.css';
+
+// Components 
+import Logon from './pages/Logon';
+
+// JSX 
+
 function App() {
+
   return (
-    <h1> Hello World </h1>
-  );
+    <Logon />
+    );
 }
 
 export default App;

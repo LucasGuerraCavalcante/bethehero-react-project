@@ -1,11 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
+
+import api from '../../services/api';
 
 import './styles.css';
 
 export default function NewIncident() {
+    const [title, setTitle] = useState('');
+    const [description, setDescription] = useState('');
+    const [value, setValue] = useState('');
+
+    const history = useHistory();
+
+    const ongId = localStorage.getItem('ongId');
+
+    async function handleNewIncident(event) {
+        event.preventDefault();
+
+        const data = {
+            title,
+            description,
+            value
+        };
+
+        try { 
+            await api.post('incidents', data, {
+                headers: {
+                    Authorization: ongId,
+                }
+            })
+
+            history.push('/profile');
+        } catch(err) {
+            alert("Error when registering Ad, try again");
+        }
+    }
+
     return (
         <div className="new-incident">
             <div className="content">
@@ -21,12 +53,22 @@ export default function NewIncident() {
                     </Link>
                 </section>
 
-                <form>
-                    <input placeholder="Title"></input>
-                    <textarea placeholder="Description"></textarea>
-
-                    <input placeholder="Value ($)"></input>
-
+                <form onSubmit={handleNewIncident}>
+                    <input 
+                        placeholder="Title"
+                        value={title}
+                        onChange={event => setTitle(event.target.value)}
+                    />
+                    <textarea 
+                        placeholder="Description"
+                        value={description}
+                        onChange={event => setDescription(event.target.value)}
+                    />
+                    <input 
+                        placeholder="Value ($)"
+                        value={value}
+                        onChange={event => setValue(event.target.value)}
+                    />
                     <button className="button" type="submit">Register</button>
                 </form>
             </div>

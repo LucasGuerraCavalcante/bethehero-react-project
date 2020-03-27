@@ -8,13 +8,13 @@ export default function Logon() {
     return (
         <div className="logon-container">
             <section className="form">
-                <h1>Be The Hero</h1>
+                <h1>BE THE HERO</h1>
 
                 <form>
                     <h3>Logon</h3>
 
                     <input placeholder="Your ID"></input>
-                    <button type="submit">Join</button>
+                    <button className="button" type="submit">Join</button>
 
                     <a href="/register">
                         <FiLogIn size={16} color="#7159c1" />

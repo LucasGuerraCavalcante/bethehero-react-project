@@ -3,14 +3,14 @@ import React from 'react';
 import './global.css';
 
 // Components 
-import Logon from './pages/Logon';
+import Routes from './routes';
 
 // JSX 
 
 function App() {
 
   return (
-    <Logon />
+    <Routes />
     );
 }
 

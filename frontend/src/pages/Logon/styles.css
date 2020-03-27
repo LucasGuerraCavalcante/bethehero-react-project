@@ -29,7 +29,7 @@ h1 {
 }
 
 .logon-container section.form form { 
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 .logon-container section.form h3 { 
@@ -37,20 +37,3 @@ h1 {
     margin-bottom: 22px;
 }
 
-.logon-container section.form form a { 
-   display: flex;
-   align-items: center;
-   margin-top: 20px;
-   color: #41414d;
-   text-decoration: none;
-   font-size: 16px;
-   transition: opacity 0.2s;
-}
-
-.logon-container section.form form a:hover { 
-    opacity: 0.8;
-}
-
-.logon-container section.form form a svg {
-    margin-right: 8px;
-} 

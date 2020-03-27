@@ -18,7 +18,7 @@ export default function Logon() {
                     <input placeholder="Your ID"></input>
                     <button className="button" type="submit">Join</button>
 
-                    <Link to="/register">
+                    <Link to="/register" className="back-link">
                         <FiLogIn size={16} color="#7159c1" />
                         Register now, get your ID 
                     </Link>

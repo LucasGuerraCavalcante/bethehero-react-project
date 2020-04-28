@@ -3,7 +3,7 @@ Be The Hero project using ReactJS and Node.js (express) based on Omnistack Week 
 
 A simple webapp where NGOs can post advertisements to find heroes who can support their goals.
 
-## in Backend/Frontend folder 
+## Backend/Frontend folder 
 
 * npm install
 * npm start
